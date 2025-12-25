@@ -127,8 +127,7 @@
                 <h2 id="hero-role"
                     class="text-sm sm:text-base md:text-lg font-bold text-primary mb-4 uppercase tracking-widest">
                     Software Engineer | Full Stack Developer</h2>
-                <p id="hero-summary"
-                    class="text-xs sm:text-sm text-gray-600 leading-relaxed text-justify-custom">
+                <p id="hero-summary" class="text-xs sm:text-sm text-gray-600 leading-relaxed text-justify-custom">
                 </p>
             </div>
             <div
@@ -230,7 +229,9 @@
                 frontend: ['React.js', 'Next.js', 'React Native', 'Inertia.js'],
                 infrastructure: ['GitHub', 'VPS Ubuntu', 'Nginx', 'PM2', 'Facebook Pixel'],
                 integrations: ['Payment Gateway', 'Midtrans', 'Duitku', 'Tokopay'],
-                databases: ['MySQL', 'PostgreSQL', 'Redis']
+                databases: ['MySQL', 'PostgreSQL', 'Redis'],
+                ai_tools: ['Gemini Code Assist', 'Gemini', 'ChatGPT', 'Google AI Studio'],
+                productivity: ['Figma', 'Postman', 'draw.io'],
             },
             certs: [
                 "Berkarir Sebagai Backend Engineer dengan Golang",
@@ -321,6 +322,8 @@
                     cat_infra: "Infrastructure & Tools",
                     cat_integrations: "Integrations & API",
                     cat_databases: "Databases",
+                    cat_ai: "AI Development Tools",
+                    cat_prod: "Productivity Tools",
                     own_full: "Personal Project",
                     own_partial: "Core Contributor",
                     own_no: "Professional Work"
@@ -341,6 +344,8 @@
                     cat_infra: "Infrastructure & Tools",
                     cat_integrations: "Integrations & API",
                     cat_databases: "Databases",
+                    cat_ai: "AI Development Tools",
+                    cat_prod: "Productivity Tools",
                     own_full: "Personal Project",
                     own_partial: "Core Contributor",
                     own_no: "Professional Work"
@@ -457,14 +462,16 @@
             const categoryMap = [
                 { key: 'backend', label: t.cat_backend },
                 { key: 'frontend', label: t.cat_frontend },
+                { key: 'ai_tools', label: t.cat_ai },
                 { key: 'infrastructure', label: t.cat_infra },
                 { key: 'integrations', label: t.cat_integrations },
-                { key: 'databases', label: t.cat_databases }
+                { key: 'databases', label: t.cat_databases },
+                { key: 'productivity', label: t.cat_prod }
             ];
 
             skillContainer.innerHTML = categoryMap.map(cat => `
                 <div class="space-y-2">
-                    <h4 class="text-[10px] font-bold text-gray-400 uppercase tracking-widest pl-1 border-l-2 border-primary/30">${cat.label}</h4>
+                    <h4 class="text-[10px] font-bold text-gray-400 uppercase tracking-widest pl-2 border-l-2 border-primary/30">${cat.label}</h4>
                     <div class="flex flex-wrap gap-1.5">
                         ${data.skills[cat.key].map(s => `
                             <span class="border border-gray-300 px-2 py-0.5 rounded text-[10px] font-bold text-gray-600 uppercase tracking-tight bg-gray-50">${s}</span>
@@ -489,7 +496,7 @@
                 </div>
             `).join('');
 
-            // Render Projects (Improved for density and soft background ownership badges)
+            // Render Projects
             const projectsGrid = document.getElementById('projects-grid');
             projectsGrid.innerHTML = data.projects.map(p => {
                 let ownText = '';
@@ -516,12 +523,10 @@
                         </div>
                     </div>
                     <p class="text-primary text-[10px] font-black uppercase tracking-tight mb-2 opacity-90">${p.role}</p>
-                    
                     <p class="text-[10px] sm:text-[11px] text-gray-500 leading-snug mb-3 flex-grow font-medium">${p.meta_description[currentLang]}</p>
-                    
                     <div class="mt-auto pt-2 flex justify-between items-center border-t border-gray-50">
                         <span class="border ${ownBadgeStyle} text-[7px] font-bold h-4 flex items-center px-1.5 rounded-sm uppercase tracking-tighter whitespace-nowrap">${ownText}</span>
-                        <a href="${p.site_url}" class="text-[10px] font-bold text-primary hover:underline flex items-center gap-1 ml-2">
+                        <a href="${p.site_url}" target="_blank" class="text-[10px] font-bold text-primary hover:underline flex items-center gap-1 ml-2">
                             <i class="fa-solid fa-link text-[8px] opacity-70"></i>
                             ${p.site_url.replace('https://', '')}
                         </a>
