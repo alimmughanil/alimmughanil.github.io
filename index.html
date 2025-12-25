@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Alim Mughanil Karim</title>
+    <!-- Tailwind CSS & DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+            line-height: 1.5;
+        }
+
+        /* Optimal Print Settings */
+        @media print {
+            @page {
+                size: A4;
+                margin: 0.8cm;
+            }
+
+            body {
+                background-color: white !important;
+                color: black !important;
+                padding: 0 !important;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .cv-container {
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+                border: none !important;
+            }
+
+            .section-title {
+                border-bottom: 1.5px solid #000 !important;
+                color: black !important;
+            }
+
+            .text-primary {
+                color: #000 !important;
+            }
+
+            .badge {
+                border: 1px solid #ccc !important;
+                color: black !important;
+                background: transparent !important;
+            }
+
+            .project-card {
+                border: 1px solid #eee !important;
+                page-break-inside: avoid;
+            }
+        }
+
+        .cv-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            padding-bottom: 0.2rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid hsl(var(--p));
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .text-justify-custom {
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body class="p-0 sm:p-4 md:p-8 lg:p-12">
+
+    <!-- Navbar / Controls (Hidden on Print) -->
+    <div
+        class="max-w-[1000px] mx-auto mb-4 sm:mb-6 flex flex-col sm:flex-row justify-between items-center no-print bg-white p-4 sm:rounded-xl shadow-sm border border-gray-200 gap-4">
+        <div class="flex gap-2">
+            <button onclick="setLanguage('id')" id="btn-id" class="btn btn-xs sm:btn-sm btn-primary">Indonesia</button>
+            <button onclick="setLanguage('en')" id="btn-en" class="btn btn-xs sm:btn-sm btn-ghost">English</button>
+        </div>
+        <button id="print-trigger" class="btn btn-xs sm:btn-sm btn-neutral gap-2">
+            <i class="fa-solid fa-print"></i>
+            Print PDF
+        </button>
+    </div>
+
+    <div class="cv-container p-6 sm:p-10 md:p-14 sm:rounded-lg">
+
+        <!-- Header -->
+        <header class="flex flex-col md:flex-row justify-between items-start border-gray-200 border-b pb-6 mb-8">
+            <div class="w-full md:max-w-2xl">
+                <h1
+                    class="text-xl sm:text-2xl font-extrabold text-gray-900 mb-2 tracking-tight text-center md:text-left">
+                    ALIM MUGHANIL KARIM</h1>
+                <h2 id="hero-role"
+                    class="text-sm sm:text-base md:text-lg font-bold text-primary mb-4 uppercase tracking-widest text-center md:text-left">
+                    Software Engineer | Full Stack Developer</h2>
+                <p id="hero-summary"
+                    class="text-xs sm:text-sm text-gray-600 leading-relaxed text-justify-custom mb-6 md:mb-0">
+                </p>
+            </div>
+            <div
+                class="w-full md:w-auto md:text-right text-[11px] sm:text-xs space-y-2 font-medium text-gray-700 bg-gray-50 md:bg-transparent p-4 md:p-0 rounded-lg md:rounded-none">
+                <div class="flex items-center md:justify-end gap-3">
+                    <span class="order-2 md:order-1">alim.mughanil23@gmail.com</span>
+                    <i class="fa-solid fa-envelope text-primary text-base order-1 md:order-2 w-5"></i>
+                </div>
+                <div class="flex items-center md:justify-end gap-3">
+                    <span class="order-2 md:order-1">08983936489</span>
+                    <i class="fa-brands fa-whatsapp text-primary text-base order-1 md:order-2 w-5"></i>
+                </div>
+                <div class="flex items-center md:justify-end gap-3">
+                    <span class="order-2 md:order-1 text-right max-w-[200px] md:max-w-none">Jakarta Barat, DKI Jakarta,
+                        11460</span>
+                    <i class="fa-solid fa-location-dot text-primary text-base order-1 md:order-2 w-5"></i>
+                </div>
+                <div class="md:justify-end flex gap-3">
+                    <a href="https://linkedin.com/in/alim-mughanil" target="_blank"
+                        class="text-primary hover:underline order-2 md:order-1">linkedin.com/in/alim-mughanil</a>
+                    <i class="fa-brands fa-linkedin text-primary text-base order-1 md:order-2 w-5"></i>
+                </div>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+            <!-- Main Content -->
+            <div class="lg:col-span-8 space-y-10">
+                <!-- Professional Experience -->
+                <section>
+                    <h3 id="title-experience" class="section-title text-sm sm:text-base text-gray-900">Pengalaman
+                        Kerja</h3>
+                    <div id="experience-list" class="space-y-8">
+                        <!-- Dynamic Experience -->
+                    </div>
+                </section>
+
+                <!-- Project Portfolio -->
+                <section>
+                    <h3 id="title-projects" class="section-title text-sm sm:text-base text-gray-900">Portofolio Proyek
+                    </h3>
+                    <div id="projects-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <!-- Dynamic Projects -->
+                    </div>
+                </section>
+
+                <!-- Education -->
+                <section>
+                    <h3 id="title-education" class="section-title text-sm sm:text-base text-gray-900">Pendidikan</h3>
+                    <div class="text-sm">
+                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-1">
+                            <h4 class="font-bold text-gray-900 text-base"><i
+                                    class="fa-solid fa-graduation-cap mr-2 text-primary"></i>UIN Walisongo Semarang</h4>
+                            <span
+                                class="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-wider mt-1 sm:mt-0">Aug
+                                2019 — Dec 2022</span>
+                        </div>
+                        <p id="edu-degree" class="text-gray-600 font-medium pl-6">Sarjana Teknologi Informasi
+                            (Bachelor's degree)</p>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="lg:col-span-4 space-y-10">
+                <!-- Skills -->
+                <section>
+                    <h3 id="title-skills" class="section-title text-sm sm:text-base text-gray-900">Keahlian Utama</h3>
+                    <div id="skills-container" class="space-y-6">
+                        <!-- Dynamic Categorized Skills -->
+                    </div>
+                </section>
+
+                <!-- Certifications -->
+                <section>
+                    <h3 id="title-certs" class="section-title text-sm sm:text-base text-gray-900">Sertifikasi</h3>
+                    <ul id="certs-list"
+                        class="space-y-3 text-[12px] sm:text-[13px] list-disc pl-5 text-gray-700 leading-relaxed">
+                        <!-- Dynamic Certs -->
+                    </ul>
+                </section>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="max-w-[1000px] mx-auto text-center mt-8 mb-12 text-[10px] text-gray-400 no-print px-4">
+        <p id="footer-text">Gunakan fitur "Print PDF" untuk mendapatkan salinan CV yang siap cetak.</p>
+    </footer>
+
+    <script>
+        const data = {
+            // Categorized Skills as per request
+            skills: {
+                backend: ['Laravel', 'PHP', 'Node.js', 'Express.js', 'Adonis.js', 'Python', 'Django'],
+                frontend: ['React.js', 'Next.js', 'React Native', 'Inertia.js'],
+                infrastructure: ['VPS Ubuntu', 'Nginx', 'PM2', 'GitHub', 'Facebook Pixel'],
+                integrations: ['Payment Gateway', 'Midtrans', 'Duitku', 'Tokopay'],
+                databases: ['MySQL', 'PostgreSQL', 'Redis']
+            },
+            certs: [
+                "Berkarir Sebagai Backend Engineer dengan Golang",
+                "Teknik Pembuatan Aplikasi menggunakan Javascript dan Node.js bagi Javascript Engineer / Programer Aplikasi"
+            ],
+            projects: [
+                {
+                    "name": "TixHub",
+                    "site_url": "https://tixhub.id",
+                    "role": "Full Stack Developer",
+                    "ownership": "partial",
+                    "is_site_active": true,
+                    "meta_description": {
+                        "id": "Platform manajemen tiket seminar dengan fitur penjualan otomatis, verifikasi pembayaran, dan analitik data peserta real-time.",
+                        "en": "Seminar ticketing management platform featuring automated sales, payment verification, and real-time participant data analytics."
+                    }
+                },
+                {
+                    "name": "RethemTopup",
+                    "site_url": "https://rethemtopup.com",
+                    "role": "Full Stack Developer",
+                    "ownership": "no",
+                    "is_site_active": true,
+                    "meta_description": {
+                        "id": "E-commerce produk digital dan top-up game dengan sistem pemrosesan transaksi otomatis 24 jam dan integrasi multi-payment gateway.",
+                        "en": "Digital product and game top-up e-commerce platform with 24/7 automated transaction processing and multi-payment gateway integration."
+                    }
+                },
+                {
+                    "name": "Cekplagiat",
+                    "site_url": "https://cekplagiat.com",
+                    "role": "Full Stack Developer",
+                    "ownership": "partial",
+                    "is_site_active": true,
+                    "meta_description": {
+                        "id": "Alat deteksi plagiarisme daring untuk verifikasi orisinalitas teks tanpa penyimpanan data di repositori, menjamin privasi dokumen pengguna.",
+                        "en": "Online plagiarism detection tool for verifying text originality without repository storage, ensuring user document privacy."
+                    }
+                },
+                {
+                    "name": "Proyekin",
+                    "site_url": "https://proyekin.id",
+                    "role": "Backend Developer",
+                    "ownership": "partial",
+                    "is_site_active": false,
+                    "meta_description": {
+                        "id": "Marketplace jasa freelancer yang menghubungkan klien dengan tenaga profesional terverifikasi di berbagai sektor industri digital.",
+                        "en": "Freelance services marketplace connecting clients with verified professionals across various digital industry sectors."
+                    }
+                },
+                {
+                    "name": "Qandidat",
+                    "site_url": "https://qandidat.com",
+                    "role": "Full Stack Developer",
+                    "ownership": "partial",
+                    "is_site_active": false,
+                    "meta_description": {
+                        "id": "Agregator lowongan kerja yang mengurasi data dari LinkedIn, portal karir, dan situs perusahaan untuk memusatkan peluang karir dalam satu platform.",
+                        "en": "Job vacancy aggregator curating data from LinkedIn, career portals, and corporate sites to centralize career opportunities in one platform."
+                    }
+                },
+                {
+                    "name": "Titipamal",
+                    "site_url": "https://titipamal.com",
+                    "role": "Full Stack Developer",
+                    "ownership": "full",
+                    "is_site_active": false,
+                    "meta_description": {
+                        "id": "Platform crowdfunding sosial untuk memfasilitasi penggalangan dan penyaluran dana donasi ke berbagai program amal.",
+                        "en": "Social crowdfunding platform facilitating fundraising and donation distribution to various charity programs."
+                    }
+                }
+            ],
+            translations: {
+                id: {
+                    hero_role: "Software Engineer | Full Stack Developer",
+                    hero_summary: "Seorang Pengembang Full Stack berpengalaman selama 3 tahun dalam Laravel dan React.js. Memiliki keahlian luas dalam merancang berbagai aplikasi web mulai dari profil perusahaan, landing page, sistem informasi yang kompleks, hingga e-commerce yang terintegrasi dengan payment gateway, layanan pengiriman, dan aplikasi pihak ketiga lainnya. Mahir dalam bahasa pemrograman seperti Laravel, React.js, Node.js, Next.js, React Native, serta memiliki pengetahuan dasar Python. Terbiasa dengan alur kerja kolaboratif melalui GitHub dan berpengalaman dalam mengelola deployment aplikasi pada VPS Ubuntu menggunakan PHP, Nginx, dan PM2.",
+                    title_experience: "Pengalaman Kerja",
+                    title_projects: "Portofolio Proyek",
+                    title_education: "Pendidikan",
+                    edu_degree: "Sarjana Teknologi Informasi | IPK: 3.9",
+                    title_skills: "Keahlian Utama",
+                    title_certs: "Sertifikasi",
+                    footer_text: "Gunakan fitur \"Print PDF\" untuk mendapatkan salinan CV yang siap cetak.",
+                    visit_site: "Kunjungi Situs",
+                    cat_backend: "Backend Development",
+                    cat_frontend: "Frontend & Mobile",
+                    cat_infra: "Infrastructure & Tools",
+                    cat_integrations: "Integrations & API",
+                    cat_databases: "Databases"
+                },
+                en: {
+                    hero_role: "Software Engineer | Full Stack Developer",
+                    hero_summary: "As a seasoned Full Stack Developer with 3 years of hands-on experience in Laravel and React.js, I bring a wealth of expertise in crafting diverse web applications. My skill set encompasses the development of company profiles, landing pages, intricate information systems, and e-commerce websites integrated with payment gateways, delivery services, and other third-party applications. Proficient in programming languages such as Laravel, React.js, Node.js, Next.js, React Native, and with a foundational knowledge of Python. Experienced in collaborative workflows on GitHub and deploying applications on Ubuntu-based VPS using PHP, Nginx, and PM2.",
+                    title_experience: "Work Experience",
+                    title_projects: "Project Portfolio",
+                    title_education: "Education",
+                    edu_degree: "Bachelor's degree, Information Technology | GPA: 3.9",
+                    title_skills: "Top Skills",
+                    title_certs: "Certifications",
+                    footer_text: "Use the \"Print PDF\" feature to get a print-ready copy of this CV.",
+                    visit_site: "Visit Site",
+                    cat_backend: "Backend Development",
+                    cat_frontend: "Frontend & Mobile",
+                    cat_infra: "Infrastructure & Tools",
+                    cat_integrations: "Integrations & API",
+                    cat_databases: "Databases"
+                }
+            },
+            experiences: [
+                {
+                    company: "PT Jaring Mitra Mandiri",
+                    period: "Feb 2023 - Present",
+                    location: "Jakarta Utara, Indonesia",
+                    id: {
+                        role: "Full Stack Developer",
+                        desc: "Bertanggung jawab menciptakan produk digital berupa aplikasi web atau mobile dengan kualitas kode yang tinggi, mudah dipelihara, dan berkinerja optimal menggunakan teknologi seperti Laravel, Node.js, Express.js untuk Backend, React.js dan Next.js untuk Frontend Web, serta React Native untuk pengembangan aplikasi Mobile."
+                    },
+                    en: {
+                        role: "Full Stack Developer",
+                        desc: "Responsible for creating high-quality, maintainable web and mobile applications using technologies such as Laravel, Node.js, Express.js (Back-End), React.js and Next.js (Front-End Web), and React Native (Mobile Apps)."
+                    }
+                },
+                {
+                    company: "Freelance, Self Employment",
+                    period: "Jan 2023 - Present",
+                    location: "Remote",
+                    id: {
+                        role: "Full Stack Developer",
+                        desc: "Menciptakan produk digital dari awal menggunakan Laravel dan React.js untuk memecahkan masalah klien sebagai pekerja lepas (freelancer)."
+                    },
+                    en: {
+                        role: "Full Stack Developer",
+                        desc: "Creating digital products from scratch with Laravel and React.js to solve my clients' problems as a freelancer."
+                    }
+                },
+                {
+                    company: "Proyekin",
+                    period: "Dec 2023 - Jun 2025",
+                    location: "Remote",
+                    id: {
+                        role: "Full-stack Web Developer",
+                        desc: "Membangun aplikasi berperforma tinggi menggunakan Laravel untuk backend dan pengembangan API, dengan keahlian dalam mengintegrasikan payment gateway seperti Duitku dan Tokopay. Memberikan pengalaman frontend yang cepat dan skalabel dengan Next.js dan React.js."
+                    },
+                    en: {
+                        role: "Full-stack Web Developer",
+                        desc: "Building high-performance applications using Laravel (Back-end & API), with expertise in integrating payment gateways like Duitku and Tokopay. Delivering fast, scalable front-end experiences with Next.js and React.js."
+                    }
+                },
+                {
+                    company: "Yayasan Amal Bakti Nusantara Tegal",
+                    period: "May 2022 - Dec 2022",
+                    location: "Tegal, Jawa Tengah",
+                    id: {
+                        role: "Full Stack Web Developer",
+                        desc: "Mengembangkan aplikasi web penggalangan dana platform Berbagi Mulia. Menggunakan Laravel Framework dengan Inertia.js (Backend), React.js (Frontend), Midtrans, Twilio WhatsApp Sender, dan integrasi Facebook Pixel."
+                    },
+                    en: {
+                        role: "Full Stack Web Developer",
+                        desc: "Developed a fundraising web app for 'Berbagi Mulia'. Used Laravel Framework with Inertia.js, React.js, Midtrans Payment Gateway, Twilio WhatsApp Sender, and Facebook Pixel integration."
+                    }
+                },
+                {
+                    company: "Baitulmaal Munzalan Indonesia",
+                    period: "Dec 2021 - Feb 2022",
+                    location: "Yogyakarta, Indonesia",
+                    id: {
+                        role: "Web Developer",
+                        desc: "Mengembangkan aplikasi web penggalangan dana 'Hobi Sedekah' menggunakan Laravel Framework, Blade Template, dan integrasi Facebook Pixel untuk optimalisasi Facebook Ads."
+                    },
+                    en: {
+                        role: "Web Developer",
+                        desc: "Developed 'Hobi Sedekah' fundraising app using Laravel Framework, Blade Template, and Facebook Pixel integration."
+                    }
+                },
+                {
+                    company: "KodingWorks",
+                    period: "Sep 2021 - Nov 2021",
+                    location: "Remote",
+                    id: {
+                        role: "Back End Developer Intern",
+                        desc: "Magang Pengembang Backend: Bertanggung jawab membuat CRUD API, implementasi modul eksternal, dan mengelola struktur website multi-tenancy menggunakan Laravel."
+                    },
+                    en: {
+                        role: "Back End Developer Intern",
+                        desc: "Internship: Responsible for CRUD API development, external module implementation, and multi-tenancy website structure using Laravel."
+                    }
+                }
+            ]
+        };
+
+        let currentLang = 'id';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            document.getElementById('btn-id').className = lang === 'id' ? 'btn btn-xs sm:btn-sm btn-primary' : 'btn btn-xs sm:btn-sm btn-ghost';
+            document.getElementById('btn-en').className = lang === 'en' ? 'btn btn-xs sm:btn-sm btn-primary' : 'btn btn-xs sm:btn-sm btn-ghost';
+
+            const t = data.translations[lang];
+            document.getElementById('hero-role').textContent = t.hero_role;
+            document.getElementById('hero-summary').textContent = t.hero_summary;
+            document.getElementById('title-experience').textContent = t.title_experience;
+            document.getElementById('title-projects').textContent = t.title_projects;
+            document.getElementById('title-education').textContent = t.title_education;
+            document.getElementById('edu-degree').textContent = t.edu_degree;
+            document.getElementById('title-skills').textContent = t.title_skills;
+            document.getElementById('title-certs').textContent = t.title_certs;
+            document.getElementById('footer-text').textContent = t.footer_text;
+
+            renderDynamic();
+        }
+
+        function renderDynamic() {
+            // Render Categorized Skills
+            const t = data.translations[currentLang];
+            const skillContainer = document.getElementById('skills-container');
+
+            const categoryMap = [
+                { key: 'backend', label: t.cat_backend },
+                { key: 'frontend', label: t.cat_frontend },
+                { key: 'infrastructure', label: t.cat_infra },
+                { key: 'integrations', label: t.cat_integrations },
+                { key: 'databases', label: t.cat_databases }
+            ];
+
+            skillContainer.innerHTML = categoryMap.map(cat => `
+                <div class="space-y-2">
+                    <h4 class="text-[10px] font-bold text-gray-400 uppercase tracking-widest pl-1 border-l-2 border-primary/30">${cat.label}</h4>
+                    <div class="flex flex-wrap gap-1.5">
+                        ${data.skills[cat.key].map(s => `
+                            <span class="border border-gray-300 px-2 py-0.5 rounded text-[10px] font-bold text-gray-600 uppercase tracking-tight bg-gray-50">${s}</span>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('');
+
+            // Render Experience
+            const expList = document.getElementById('experience-list');
+            expList.innerHTML = data.experiences.map(e => `
+                <div class="group">
+                    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-1">
+                        <h4 class="font-bold text-gray-900 uppercase tracking-tight text-sm sm:text-base">${e[currentLang].role}</h4>
+                        <span class="text-[9px] sm:text-[10px] font-bold text-gray-400 uppercase tracking-wider mt-1 sm:mt-0">${e.period}</span>
+                    </div>
+                    <div class="flex justify-between items-center mb-2 border-l-2 border-primary/20 pl-3">
+                        <p class="text-primary font-bold text-[13px] sm:text-[14px]">${e.company}</p>
+                        <p class="text-[10px] text-gray-400 italic font-medium">${e.location}</p>
+                    </div>
+                    <p class="text-gray-600 text-xs sm:text-[13px] leading-relaxed text-justify-custom">${e[currentLang].desc}</p>
+                </div>
+            `).join('');
+
+            // Render Projects
+            const projectsGrid = document.getElementById('projects-grid');
+            projectsGrid.innerHTML = data.projects.map(p => `
+                <div class="project-card border border-gray-100 p-4 rounded-lg hover:shadow-md transition-all flex flex-col h-full">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="font-extrabold text-sm sm:text-base text-gray-800">${p.name}</h4>
+                        ${p.is_site_active ? '<span class="badge badge-success badge-xs text-[8px] text-white">ACTIVE</span>' : '<span class="badge badge-ghost badge-xs text-[8px]">OFFLINE</span>'}
+                    </div>
+                    <p class="text-primary text-[10px] font-bold uppercase mb-2">${p.role}</p>
+                    <p class="text-[11px] sm:text-[12px] text-gray-500 leading-tight mb-4 flex-grow">${p.meta_description[currentLang]}</p>
+                    <div class="mt-auto">
+                        <a href="${p.site_url}" target="_blank" class="text-xs font-bold text-primary hover:underline flex items-center gap-1">
+                            ${p.site_url.replace('https://', '')}
+                            <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke-width="2.5"/></svg>
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+
+            // Render Certs
+            const certList = document.getElementById('certs-list');
+            certList.innerHTML = data.certs.map(c => `<li>${c}</li>`).join('');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setLanguage('id');
+            const printBtn = document.getElementById('print-trigger');
+            printBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.print();
+            });
+        });
+    </script>
+</body>
+
+</html>
