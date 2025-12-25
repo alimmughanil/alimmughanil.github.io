@@ -44,6 +44,8 @@
                 padding: 0 !important;
                 box-shadow: none !important;
                 border: none !important;
+                overflow: visible !important;
+                /* Ensure links are not clipped */
             }
 
             .section-title {
@@ -64,6 +66,12 @@
             .project-card {
                 border: 1px solid #eee !important;
                 page-break-inside: avoid;
+            }
+
+            /* Ensure links are recognizable by PDF engines */
+            a {
+                text-decoration: none !important;
+                color: inherit !important;
             }
         }
 
@@ -112,48 +120,49 @@
     <div class="cv-container p-6 sm:p-10 md:p-14 sm:rounded-lg">
 
         <!-- Header -->
-        <header class="flex flex-col md:flex-row justify-between items-start border-gray-200 border-b pb-6 mb-8">
-            <div class="w-full md:max-w-2xl">
-                <h1
-                    class="text-xl sm:text-2xl font-extrabold text-gray-900 mb-2 tracking-tight text-center md:text-left">
+        <header class="flex flex-col md:flex-row justify-between items-start border-gray-200 border-b pb-4">
+            <div class="w-full md:max-w-2xl text-center md:text-left mb-2">
+                <h1 class="text-xl sm:text-2xl font-extrabold text-gray-900 mb-2 tracking-tight">
                     ALIM MUGHANIL KARIM</h1>
                 <h2 id="hero-role"
-                    class="text-sm sm:text-base md:text-lg font-bold text-primary mb-4 uppercase tracking-widest text-center md:text-left">
+                    class="text-sm sm:text-base md:text-lg font-bold text-primary mb-4 uppercase tracking-widest">
                     Software Engineer | Full Stack Developer</h2>
                 <p id="hero-summary"
-                    class="text-xs sm:text-sm text-gray-600 leading-relaxed text-justify-custom mb-6 md:mb-0">
+                    class="text-xs sm:text-sm text-gray-600 leading-relaxed text-justify-custom">
                 </p>
             </div>
             <div
-                class="w-full md:w-auto md:text-right text-[11px] sm:text-xs space-y-2 font-medium text-gray-700 bg-gray-50 md:bg-transparent p-4 md:p-0 rounded-lg md:rounded-none">
-                <div class="flex items-center md:justify-end gap-3">
-                    <span class="order-2 md:order-1">alim.mughanil23@gmail.com</span>
+                class="w-full md:w-auto md:text-right text-[11px] sm:text-xs font-medium text-gray-700 bg-gray-50 md:bg-transparent rounded-lg md:rounded-none">
+                <div class="flex items-center md:justify-end gap-3 text-right">
+                    <a href="mailto:alim.mughanil23@gmail.com"
+                        class="order-2 md:order-1 hover:text-primary transition-colors">alim.mughanil23@gmail.com</a>
                     <i class="fa-solid fa-envelope text-primary text-base order-1 md:order-2 w-5 text-center"></i>
                 </div>
-                <div class="flex items-center md:justify-end gap-3">
-                    <span class="order-2 md:order-1">08983936489</span>
+                <div class="flex items-center md:justify-end gap-3 text-right">
+                    <a href="https://wa.me/628983936489"
+                        class="order-2 md:order-1 hover:text-primary transition-colors">08983936489</a>
                     <i class="fa-brands fa-whatsapp text-primary text-base order-1 md:order-2 w-5 text-center"></i>
                 </div>
-                <div class="flex items-center md:justify-end gap-3">
-                    <span class="order-2 md:order-1 text-right max-w-[200px] md:max-w-none">Jakarta Barat, DKI Jakarta,
+                <div class="flex items-center md:justify-end gap-3 text-right">
+                    <span class="order-2 md:order-1 max-w-[200px] md:max-w-none">Jakarta Barat, DKI Jakarta,
                         11460</span>
                     <i class="fa-solid fa-location-dot text-primary text-base order-1 md:order-2 w-5 text-center"></i>
                 </div>
-                <div class="md:justify-end flex gap-3">
-                    <a href="https://linkedin.com/in/alim-mughanil" target="_blank"
-                        class="text-primary hover:underline order-2 md:order-1">linkedin.com/in/alim-mughanil</a>
+                <div class="flex items-center md:justify-end gap-3 text-right">
+                    <a href="https://linkedin.com/in/alim-mughanil"
+                        class="order-2 md:order-1 text-primary hover:underline">linkedin.com/in/alim-mughanil</a>
                     <i class="fa-brands fa-linkedin text-primary text-base order-1 md:order-2 w-5 text-center"></i>
                 </div>
             </div>
         </header>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 mt-4">
             <!-- Main Content -->
             <div class="lg:col-span-8 space-y-10">
-                <!-- Professional Experience -->
+                <!-- Work Experience -->
                 <section>
-                    <h3 id="title-experience" class="section-title text-sm sm:text-base text-gray-900">Pengalaman
-                        Kerja</h3>
+                    <h3 id="title-experience" class="section-title text-sm sm:text-base text-gray-900">Pengalaman Kerja
+                    </h3>
                     <div id="experience-list" class="space-y-8">
                         <!-- Dynamic Experience -->
                     </div>
@@ -173,14 +182,15 @@
                     <h3 id="title-education" class="section-title text-sm sm:text-base text-gray-900">Pendidikan</h3>
                     <div class="text-sm">
                         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-1">
-                            <h4 class="font-bold text-gray-900 text-base"><i
-                                    class="fa-solid fa-graduation-cap mr-2 text-primary"></i>UIN Walisongo Semarang</h4>
+                            <h4 class="font-bold text-gray-900 text-base">
+                                <i class="fa-solid fa-graduation-cap mr-2 text-primary"></i>UIN Walisongo Semarang
+                            </h4>
                             <span
                                 class="text-[10px] sm:text-xs font-bold text-gray-400 uppercase tracking-wider mt-1 sm:mt-0">Aug
                                 2019 — Dec 2022</span>
                         </div>
-                        <p id="edu-degree" class="text-gray-600 font-medium pl-6">Sarjana Teknologi Informasi
-                            (Bachelor's degree)</p>
+                        <p id="edu-degree" class="text-gray-600 font-medium pl-6">Sarjana Teknologi Informasi (IPK: 3.9)
+                        </p>
                     </div>
                 </section>
             </div>
@@ -215,11 +225,10 @@
 
     <script>
         const data = {
-            // Categorized Skills as per request
             skills: {
                 backend: ['Laravel', 'PHP', 'Node.js', 'Express.js', 'Adonis.js', 'Python', 'Django'],
                 frontend: ['React.js', 'Next.js', 'React Native', 'Inertia.js'],
-                infrastructure: ['VPS Ubuntu', 'Nginx', 'PM2', 'GitHub', 'Facebook Pixel'],
+                infrastructure: ['GitHub', 'VPS Ubuntu', 'Nginx', 'PM2', 'Facebook Pixel'],
                 integrations: ['Payment Gateway', 'Midtrans', 'Duitku', 'Tokopay'],
                 databases: ['MySQL', 'PostgreSQL', 'Redis']
             },
@@ -480,41 +489,41 @@
                 </div>
             `).join('');
 
-            // Render Projects
+            // Render Projects (Improved for density and soft background ownership badges)
             const projectsGrid = document.getElementById('projects-grid');
             projectsGrid.innerHTML = data.projects.map(p => {
-                // Determine ownership color and label text
                 let ownText = '';
-                let ownBadgeClass = '';
+                let ownBadgeStyle = '';
                 if (p.ownership === 'full') {
                     ownText = t.own_full;
-                    ownBadgeClass = 'badge-info';
+                    ownBadgeStyle = 'bg-blue-50 text-blue-700 border-blue-100';
                 } else if (p.ownership === 'partial') {
                     ownText = t.own_partial;
-                    ownBadgeClass = 'badge-primary';
+                    ownBadgeStyle = 'bg-purple-50 text-purple-700 border-purple-100';
                 } else {
                     ownText = t.own_no;
-                    ownBadgeClass = 'badge-ghost border-gray-300';
+                    ownBadgeStyle = 'bg-gray-100 text-gray-600 border-gray-200';
                 }
 
                 return `
-                <div class="project-card border border-gray-100 p-4 rounded-lg hover:shadow-md transition-all flex flex-col h-full bg-white">
-                    <div class="flex justify-between items-start mb-1">
-                        <h4 class="font-extrabold text-sm sm:text-base text-gray-800">${p.name}</h4>
+                <div class="project-card border border-gray-100 p-3 rounded-lg hover:shadow-md transition-all flex flex-col h-full bg-white">
+                    <div class="flex justify-between items-start mb-0.5">
+                        <h4 class="font-extrabold text-[13px] sm:text-sm text-gray-800 tracking-tight">${p.name}</h4>
                         <div class="flex flex-col items-end gap-1">
-                            ${p.is_site_active ? '<span class="badge badge-success badge-xs text-[8px] text-white font-bold">ACTIVE</span>' : '<span class="badge badge-ghost badge-xs text-[8px] font-bold">OFFLINE</span>'}
+                            ${p.is_site_active ?
+                        '<span class="text-[7px] text-success font-black border border-success/30 px-1 rounded uppercase tracking-tighter">ACTIVE</span>' :
+                        '<span class="text-[7px] text-gray-400 font-black border border-gray-200 px-1 rounded uppercase tracking-tighter">OFFLINE</span>'}
                         </div>
                     </div>
-                    <!-- Ownership Badge -->
-                    <div class="mb-2">
-                        <span class="badge ${ownBadgeClass} badge-xs py-2 text-[9px] font-bold tracking-tight">${ownText}</span>
-                    </div>
-                    <p class="text-primary text-[10px] font-black uppercase mb-2 italic tracking-tighter">${p.role}</p>
-                    <p class="text-[11px] sm:text-[12px] text-gray-500 leading-tight mb-4 flex-grow font-medium">${p.meta_description[currentLang]}</p>
-                    <div class="mt-auto border-t border-gray-50 pt-3">
-                        <a href="${p.site_url}" target="_blank" class="text-xs font-bold text-primary hover:underline flex items-center gap-1">
+                    <p class="text-primary text-[10px] font-black uppercase tracking-tight mb-2 opacity-90">${p.role}</p>
+                    
+                    <p class="text-[10px] sm:text-[11px] text-gray-500 leading-snug mb-3 flex-grow font-medium">${p.meta_description[currentLang]}</p>
+                    
+                    <div class="mt-auto pt-2 flex justify-between items-center border-t border-gray-50">
+                        <span class="border ${ownBadgeStyle} text-[7px] font-bold h-4 flex items-center px-1.5 rounded-sm uppercase tracking-tighter whitespace-nowrap">${ownText}</span>
+                        <a href="${p.site_url}" class="text-[10px] font-bold text-primary hover:underline flex items-center gap-1 ml-2">
+                            <i class="fa-solid fa-link text-[8px] opacity-70"></i>
                             ${p.site_url.replace('https://', '')}
-                            <i class="fa-solid fa-arrow-up-right-from-square text-[8px]"></i>
                         </a>
                     </div>
                 </div>
